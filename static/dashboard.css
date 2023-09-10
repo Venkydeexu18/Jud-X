@@ -1,0 +1,274 @@
+/* dashboard starts */
+:root{
+    --main-col: #fff;
+    --sec-col: #000;
+    --th-col: #f1f1f1;
+  }
+.cont .box{
+    width: calc((100%/3) - 10px);
+    height: max-content;
+    background-color: var(--sec-col);
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--main-col);
+    font-family: "inter";
+}
+
+.bt{
+    color: var(--th-col);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.bs{
+    font-weight: 500;
+}
+
+.sm{
+    font-size: 13px;
+    margin-top: 2px;
+}
+.warn{
+    color: red;
+}
+
+
+.gh{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--sec-col);
+}
+
+.vcont {
+    width: 460px;
+    height: 200px;
+    display: flex;
+}
+
+.h-labels {
+    width: 460px;
+    height: 40px;
+}
+
+.vcont .l-labels {
+    width: 10%;
+    height: 100%;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+
+.h-labels .incont {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    margin-left: 10%;
+}
+
+.h-labels .incont .label,
+.vcont .l-labels .l-label {
+    width: calc(100% / 7);
+    height: 100%;
+    color: var(--main-col);
+    font-family: Inter;
+    font-size: 9px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vcont .l-labels .l-label {
+    width: 100%;
+    height: calc(100% / 5);
+}
+
+.container .h-cont {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    user-select: none;
+}
+
+.container .h-cont .hl-cont {
+    width: 100%;
+    height: calc(100% / 5);
+    border-bottom: 1px dashed var(--line-col);
+}
+
+.container .l-cont {
+    width: calc(100% / 7);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.container .l-cont .line {
+    width: 1px;
+    height: 100%;
+    position: relative;
+    border-right: 1px dashed var(--line-col);
+}
+
+.container .l-cont:hover .line {
+    border-right: 1px dashed var(--main-col);
+}
+
+.container .l-cont .line .dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--th-col);
+}
+
+.container .l-cont .line .dot .idot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--th-col);
+}
+
+.hover {
+    width: max-content;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    height: max-content;
+    font-size: 12px;
+    display: none;
+    align-items: center;
+    font-family: Inter;
+    padding: 5px 8px;
+    z-index: 10;
+    background-color: var(--main-col);
+    box-shadow: 0 0 5px var(--th-col);
+}
+
+.ddot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-col);
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.container .l-cont:hover .hover {
+    display: flex;
+}
+
+/* graph ends */
+
+
+/* date starts */
+
+.dates{
+    width: max-content;
+    height: max-content;
+    margin-left: 20px;
+    color: #fff;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.dcont {
+    width: max-content;
+    height: 110px;
+    display: flex;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: var(--sec-col);
+}
+
+.datecont {
+    width: 35px;
+    height: 100%;
+    border-radius: 50px;
+    margin-right: 15px;
+}
+
+.datecont .w {
+    color: #b8c4ca;
+    font-weight: 300;
+}
+
+.datecont .d {
+    color: rgb(255, 255, 255);
+}
+
+.sel {
+    background-color: var(--sec-col);
+}
+
+.sel .w,
+.sel .d {
+    color: white;
+}
+
+.w,
+.d {
+    width: 100%;
+    height: 50%;
+    font-family: "Inter";
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.profile{
+    width: 35%;
+    height: 100%;
+    padding: 0 20px;
+    /* background-color: red; */
+}
+
+.profile .bbox{
+    width: 100%;
+    height: max-content;
+    background-color: var(--sec-col);
+    border-radius: 10px;
+    padding: 30px;
+    color: #fff;
+    font-family: "Inter";
+    margin-bottom: 20px;
+}
+
+.profile .bbox .data{
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.profile .bbox .data .label{
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.bdl{
+    font-family: "Inter";
+    font-size: 13.5px;
+    line-height: 150%;
+    color: #e2e4e4;
+}

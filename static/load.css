@@ -1,0 +1,175 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-col: #fff;
+    --sec-col: #000;
+    --th-col: #f1f1f1;
+  }
+body {
+    background-color: var(--th-col);
+}
+
+/* components */
+
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.max {
+    width: max-content;
+    height: max-content;
+}
+
+.hide {
+    display: none;
+}
+
+/* loading start */
+
+.loading {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: var(--sec-col);
+    left: 0;
+    z-index: 10;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.mid {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--sec-col);
+    animation: beat 1s infinite ease;
+}
+
+@keyframes beat {
+    70% {
+        transform: scale(1.1);
+    }
+
+    90% {
+        transform: scale(1);
+    }
+
+    95% {
+        transform: scale(1.1);
+    }
+}
+
+/* loading ends */
+
+.ratio {
+    width: 90%;
+    height: 100vh;
+}
+
+.ratio .topbar {
+    width: 100%;
+    height: 75px;
+    color: var(--sec-col);
+    font-family: "Inter";
+    justify-content: space-between;
+}
+
+.ratio .topbar .title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.ratio .topbar .links {
+    gap: 20px;
+}
+
+.ratio .topbar .sub {
+    color: var(--sec-col);
+    text-decoration: none;
+    font-size: 16px;
+    padding-top: 19px;
+}
+
+
+.search {
+    width: 50%;
+    height: 40px;
+    gap: 70px;
+}
+
+.ratio .topbar .search .inp {
+    border-radius: 5px;
+    background-color: #dedbdb;
+    font-family: "Inter";
+    color: var(--sec-col);
+    font-size: 13px;
+    padding: 0 20px;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    width: 100%;
+    height: 55px;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.navbar .link {
+    font-family: "Inter";
+    color:#000;
+    font-size: 13px;
+    text-decoration: none;
+}
+.cont {
+    width: 100%;
+    height: calc(100% - 150px);
+    padding-top: 10px;
+    position: relative;
+}
+
+.float {
+    width: max-content;
+    height: max-content;
+    padding: 10px 13px;
+    font-family: "Inter";
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: var(--sec-col);
+    color: var(--sec-col);
+    border: none;
+    border-radius: 4px;
+}
+
+.cont .dtit {
+    /* font-family: "inter"; */
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--sec-col);
+    margin-bottom: 25px;
+}

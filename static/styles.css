@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  --color-hover: rgb(9, 9, 9);
+  --transition: all 0.5s ease;
+}
+
+:root{
+  --main-col: #fff;
+  --sec-col: #000;
+  --th-col: #f1f1f1;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 78px;
+  height: 100%;
+  background: var(--main-col);
+  padding: 8px 16px;
+  transition: var(--transition);
+}
+
+.sidebar.expand {
+  width: 250px;
+  transition: var(--transition);
+}
+
+.nav-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-header .logo {
+  color: var(--sec-col);
+  font-size: 23px;
+  font-weight: 600;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-header .logo {
+  opacity: 1;
+  transition: var(--transition);
+}
+
+.nav-header .btn-menu {
+  position: absolute;
+  color: var(--sec-col);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 23px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.sidebar.expand .nav-header .btn-menu {
+  margin-right: 0;
+}
+
+.nav-links {
+  margin-top: 20px;
+  height: 100%;
+}
+
+.nav-links li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.nav-links i {
+  color: var(--sec-col);
+  height: 50px;
+  min-width: 50px;
+  font-size: 23px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.nav-links input {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--sec-col);
+  outline: none;
+  height: 40px;
+  width: 50%;
+  border: none;
+  border-radius: 12px;
+  background: var(--th-col);
+  padding: 0;
+}
+
+.sidebar.expand .nav-links input {
+  width: 100%;
+  padding: 0 20px 0 40px;
+}
+
+.nav-links li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  background: var(--main-col);
+}
+
+.nav-links li:hover a {
+  background: var(--sec-col);
+}
+
+.nav-links li:hover i {
+  color: var(--main-col);
+}
+
+.nav-links li a .title {
+  color: var(--sec-col);
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  display: none;
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-links li a .title {
+  display: block;
+  transition: var(--transition);
+}
+
+.nav-links li:hover a .title {
+  color: var(--main-col);
+}
+
+.nav-links li .tooltip {
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: var(--main-col);
+  color: var(--sec-col);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 14px;
+  font-size: 15px;
+  white-space: nowrap;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: var(--transition);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar.expand .tooltip {
+  display: none;
+}
+.sidebar.expand {
+  width: 250px;
+  transition: var(--transition);
+}
+
+.nav-links .search-btn {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-25px);
+  font-size: 23px;
+  color: var(--sec-col);
+  border-radius: 12px;
+  background: var(--main-col);
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-links .search-btn {
+  background: transparent;
+  transition: var(--transition);
+}
+
+.sidebar.expand .nav-links li:hover .search-btn {
+  color: var(--sec-col);
+}
+
+.nav-links .search-btn:hover {
+  background: var(--sec-col);
+}
+
+.theme-wrapper {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 250px;
+  left: 0;
+  padding: 8px 16px;
+}
+
+.theme-wrapper .theme-icon {
+  font-size: 20px;
+  color: var(--sec-col);
+  display: none;
+  transition: var(--transition);
+}
+.sidebar.expand .theme-wrapper .theme-icon {
+  display: block;
+}
+
+.theme-wrapper p {
+  font-size: 16px;
+  color: var(--sec-col);
+  font-weight: 400;
+  display: none;
+  transition: var(--transition);
+}
+
+.sidebar.expand .theme-wrapper p {
+  display: block;
+}
+
+.theme-wrapper .theme-btn {
+  width: 40px;
+  height: 20px;
+  background: var(--th-col);
+  border-radius: 30px;
+  position: relative;
+}
+
+.theme-wrapper .theme-btn .theme-ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--sec-col);
+  border-radius: 50%;
+  top: 2px;
+}
+
+.move{
+  right: 3px;
+}
+.dark-mode .nav-header img {
+  filter: invert(100%);
+}
+
+.home {
+  position: relative;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  min-height: 100vh;
+  background: var(--th-col);
+  z-index: 6;
+  transition: var(--transition);
+}
+
+.sidebar.expand ~ .home {
+  left: 250px;
+  width: calc(100% - 250px);
+  transition: var(--transition);
+}
+
+.home p {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--sec-col);
+  display: inline-block;
+  margin: 20px;
+  white-space: nowrap;
+}
+@import url('https://fonts.googleapis.com/css?family=SF+Pro');
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'SF Pro', sans-serif; 
+        background-color: #f8f5f5;
+        color: #070707;
+      }
+      .flex-container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .image {
+        width: 100%;
+        margin-right: 0rem;
+      }
+      .image img {
+        max-width: 100%;
+        height: 300px;
+        margin-bottom: 350px;
+        margin-left: 9rem;
+      }
+      .container {
+        width: 50%;
+        margin-bottom: 200px;
+        margin-right: 120px;
+      }
+      .container p {
+        font-size: 3rem;
+        padding: 0.5rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        text-align: left;
+      }
+      .container p span.typed-text {
+        font-weight: normal;
+        background-color:var(--sec-col);
+        color: var(--main-col);
+      }
+      .container p span.cursor {
+        display: inline-block;
+        background-color: #ccc;
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+      }
+      .container p span.cursor.typing {
+        animation: none;
+      }
+      .tagline {
+        font-size: 20px; 
+        margin-top: -1rem;
+      }
+      .btn-container {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -40px;
+      }
+      .btn-container button {
+        font-size: 1.5rem;
+        font-weight: bolder; 
+        padding: 0.5rem 0rem;
+        padding-right: 30px;
+        padding-left: 18px;
+        border: 2px solid var(--sec-col);
+        background-color: transparent; 
+        color: var(--sec-col); 
+        cursor: pointer;
+        transition: all 0.3s ease-in-out; 
+        text-align: center;
+        margin-right: 300px;
+        border-radius: 30px;
+      }
+      .btn-container button:hover {
+        background-color: var(--sec-col);
+        color: var(--main-col);
+      }
+      .nav-header .search-btn {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        font-size: 23px;
+        color: var(--sec-col);
+        border-radius: 12px;
+        background: var(--main-col);
+        transition: var(--transition);
+        cursor: pointer;
+      }
+      
+      .sidebar.expand .nav-header .search-btn {
+        background: transparent;
+        transition: var(--transition);
+      }
+      
+      .nav-header .search-btn:hover {
+        background: var(--sec-col);
+        color: var(--main-col);
+      }
+      
+      .nav-header .search-btn:focus {
+        outline: none;
+      }
+      
+      .nav-header .search-btn.active {
+        background: var(--sec-col);
+        color: var(--main-col);
+      }
+      
+      .sidebar.expand .nav-header .search-btn.active {
+        background: transparent;
+      }
+      
+      @keyframes blink {
+        0%  { background-color: #ccc; }
+        49% { background-color: #ccc; }
+        50% { background-color: transparent; }
+        99% { background-color: transparent; }
+        100%  { background-color: #ccc; }
+      }
