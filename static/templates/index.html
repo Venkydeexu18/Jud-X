@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jud-X | Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 0 20px;
+            }
+
+            .navbar {
+                padding: 10px 20px;
+            }
+
+            .brand {
+                font-size: 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .get-started-button {
+                padding: 8px 16px;
+            }
+
+            .main-content h1 {
+                font-size: 40px;
+            }
+
+            .logo-image {
+                height: auto;
+                max-width: 100%;
+                top: 140px;
+            }
+
+            .text-container {
+                top: 190px;
+                left: 0;
+                right: 0;
+                padding: 0 20px;
+            }
+
+            .text2 {
+                padding-top: 20px;
+            }
+
+            .lawyer {
+                font-size: 200px;
+                margin-top: 140px;
+            }
+        }
+
+        /* Your existing CSS styles */
+        @font-face {
+            font-family: 'Bon Foyage';
+            src: url('../static/bonfoyage-webfont.woff2') format('woff2'),
+                 url('../static/bonfoyage-webfont.woff') format('woff'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Offbit';
+            src: url('offbit.woff2') format('woff2'), 
+                 url('offbit.woff') format('woff'); 
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding-left: 39px;
+            padding-right: 39px;
+            overflow: hidden; 
+        }
+
+        ul, li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: #f2eee3;
+        }
+        .nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-item {
+            margin: 10px 0;
+        }
+        
+        .nav-item a {
+            text-decoration: none;
+            color: #333; /* Change the color to your preference */
+            cursor: pointer;
+            font-size: 18px; /* Default font size */
+            transition: color 0.3s, font-size 0.3s;
+        }
+        
+        .nav-item a:hover {
+            color: #333;
+            font-size: 20px; /* Increase font size on hover to your preference */
+            cursor: pointer;
+        }
+
+        .navbar {
+            background-color: #f2eee3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .brand {
+            font-weight: bold;
+            font-size: 24px;
+            font-family: 'Offbit', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        .get-started-button {
+            background-color: #554949;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            text-align: center;
+            font-family: 'Bon Foyage', sans-serif;
+            color: #000;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .main-content h1 {
+            font-size: 70px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 6rem;
+            letter-spacing: 2px; 
+            position: relative;
+        }
+
+        .logo-image {
+            height: 450px;
+            width: 380px;
+            position: absolute; 
+            top: 260px; 
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .text-container {
+            text-align: left;
+            margin: 20px;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            padding-left: 39px;
+            padding-right: 39px;
+        }
+
+        .arrow {
+            width: 5px;
+            height: 10px;
+            padding-top: 380px;
+        }
+
+        .arrow img {
+            height: 20px;
+        }
+
+        .text {
+            font-family: 'sans-serif';
+            font-size: 18px;
+            padding-top: 20px;
+        }
+
+        .text-container1 {
+            text-align: left;
+            margin: 20px;
+            position: absolute;
+            top: 0;
+            right: 30px;
+            padding-left: 39px;
+            padding-right: 39px;
+        }
+
+        .text2 {
+            font-family: 'sans-serif';
+            font-size: 18px;
+            padding-top: 320px;
+        }
+
+        .lawyer {
+            text-align: center;
+            font-family: 'Bon Foyage', sans-serif;
+            font-size: 400px;
+            color: #f5ad91;
+            margin-top: 260px;
+            background: linear-gradient(rgba(237, 210, 182, 0.954) -50%, transparent 80%);
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        }
+        .get-started-button {
+            background-color: #554949;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Jud-X</div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item"><a href="/find">Advocacy</a></li>
+            <li class="nav-item"><a href="/adr">ADR</a></li>
+            <li class="nav-item"><a href="/fee">CourtFee</a></li>
+            <li class="nav-item"><a href="/kids">Lawtoons</a></li>
+        </ul>
+        <div class="">
+            <a href="{{ url_for('case_file') }}">
+              <button class="get-started-button">Get Started</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>HIGH QUALITY LEGAL<br>CONSULTANCY</h1>
+        <img src="../static/stat.png" alt="Consultancy Logo" class="logo-image">
+    </div>
+
+    <div class="text-container">
+        <div class="arrow"><img src="../static/arrow.svg" alt="Arrow Icon"></div>
+        <div class="text">Specialist Family Lawyers <br>and Divorce Solicitors</div>
+    </div>
+
+    <div class="text-container1">
+        <div class="text2">Family law is all we do, so <br>whatever your situation, it<br>will be familiar to us. We<br>strive to expand time.</div>
+    </div>
+
+    <div class="lawyer">LAWYER</div>
+</body>
+</html>

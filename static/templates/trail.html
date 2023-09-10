@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text</title>
+    <style>
+        @font-face {
+            font-family: 'Offbits';
+            src: url('offbittrial-101-webfont.woff2') format('woff2'),
+                 url('offbittrial-101-webfont.woff') format('woff');
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Offbit';
+            src: url('offbittrial-dot-webfont.woff2') format('woff2'),
+                 url('offbittrial-dot-webfont.woff') format('woff');
+            font-style: normal;
+        }
+
+        .animated-text {
+            font-size: 24px;
+            font-family: 'Offbit', sans-serif;
+            animation: fontAnimation 1s infinite alternate;
+        }
+
+        @keyframes fontAnimation {
+            0%, 100% {
+                font-family: 'Offbit', sans-serif;
+            }
+            50% {
+                font-family: 'Offbits', sans-serif;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="animated-text">Animated Text</p>
+</body>
+</html>

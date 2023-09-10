@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../static/load.css">
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/android-chrome-192x192.png">
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script src="../static/app.js" defer></script>
+    <style>.link {
+        color: black; 
+      }
+      @font-face {
+            font-family: 'Offbit';
+            src: url('offbit.woff2') format('woff2'), 
+                 url('offbit.woff') format('woff'); 
+            font-style: normal;
+        }
+        .texture{
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5rem;
+            color: color: rgba(255, 255, 255, 0.705);
+            font-size: 16px;
+        }
+      </style>
+    <title>VitaDex | Dashboard</title>
+</head>
+<body class="flex center">
+    <div class="loading flex center">
+        <div class="mid max">
+            <p class="ltxt">VitaDex</p>
+        </div>
+    </div>
+
+    <div class="ratio">
+        <div class="topbar flex center">
+            <div class="search flex center">
+                <p class="title">Judex</p>
+                <input type="text" class="inp" placeholder="Search">
+            </div>
+            <div class="links flex center">
+                <a href="/" class="sub">Home</a>
+            </div>
+        </div>
+        <div class="navbar flex center">
+            <div class="link">
+            <a href="diseases" class="link">Connect</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="dashboard" class="link">Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="support" class="link">Support</a>
+        </div>
+        </div>
+        <div class="cont flex">
+            <div style="width: 65%">
+                <p class="dtit" style="font-family: 'Offbit', sans-serif;">Under-trail Prisoners Dashboard</p>
+                <div class="flex" style="gap:20px;
+                            margin-bottom: 40px;">
+                    <div class="box">
+                        <p class="bt">Tracking & Monitoring</p>
+                        <p class="bs">18 days left</p>
+                        <p class="bs sm">High Court</p>
+                    </div>
+                    <div class="box warn">
+                        <p class="bt">Criminal Justice System</p>
+                        <p class="bs">Adv. Satyam</p>
+                        <p class="bs sm">Connect &nbsp&nbsp-></p>
+                    </div>
+                    <div class="box warn">
+                        <p class="bt">Mental health support</p>
+                        <p class="bs">Family link</p>
+                        <p class="bs sm">Schedule meet up</p>
+                    </div>
+                </div>
+                <div class="flex" style="font-family: 'Offbit', sans-serif">
+                    <div class="graph">
+                        <p class="dtit" style="font-size:18px;">Case Summary</p>
+                        <div class="gh">
+                            <div class="vcont">
+                                <div class="container" id="cont">
+                                    <div class="texture">
+                                    <p style="color: rgb(249, 246, 246);"></p>
+                                    </div>
+                                    <div class="h-cont" id="h-cont">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-labels">
+                                <div class="incont">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile" style="font-family: 'Offbit', sans-serif;">
+                <p class="dtit">Prisoner Details</p>
+                <div class="bbox">
+                    <div class="data flex">
+                        <p class="label">Name : &nbsp</p>
+                        <p class="dl"> Ibrahim</p>
+                    </div>
+                    <div class="data flex">
+                        <p class="label">Age : &nbsp</p>
+                        <p class="dl"> 46</p>
+                    </div>
+                    <div class="data flex">
+                        <p class="label">Case No. : &nbsp</p>
+                        <p class="dl"> 104139</p>
+                    </div>
+                    <div class="data flex">
+                        <p class="label">Address : &nbsp</p>
+                        <p class="dl"> Delhi</p>
+                    </div>
+                    <div class="data flex">
+                        <p class="label">Phone : &nbsp</p>
+                        <p class="dl"> 8889988899</p>
+                    </div>
+                    <div class="data flex">
+                        <p class="label">Gender : &nbsp</p>
+                        <p class="dl"> Male</p>
+                    </div>
+                    <div class="data flex">
+                        <p class="label">Date of Birth : &nbsp</p>
+                        <p class="dl"> 1-1-1979</p>
+                    </div>
+                </div>
+                <div class="bbox">
+                    <p class="bdl"> Note : Undertrial prisoners, often referred to as pretrial detainees, are individuals who have been arrested and charged with a crime but have not yet been convicted or sentenced by a court of law. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
