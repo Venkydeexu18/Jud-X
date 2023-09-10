@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lawyer Details</title>
+    <style>
+        body {
+            background-color: #E3DFD7;
+            font-family: "Montaga", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            font-size: xxx-large;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #0066cc;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px auto;
+            
+            max-width: 600px;
+            border-radius: 7px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+       
+        @media screen and (max-width: 768px) {
+            form {
+                padding: 10px;
+            }
+
+            input[type="text"],
+            textarea {
+                width: 100%;
+                padding: 8px;
+            }
+
+            textarea {
+                height: 250px;
+            }
+        }
+        input[type="submit"] {
+            background-color: #777;
+            /* color: #fff; */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 50px;
+            margin-left: 190px;
+            font-size: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333; 
+        }
+        input[type="file"] {
+            background-color: #777;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 10px;
+            margin: 10px;
+            font-size: 15px;
+        }
+        input[type="file"]:hover {
+            background-color: #333; 
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <h1>Report Instant FIR to nearest PS:</h1>
+
+    <form method="post" action="/response" multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone"><br>
+        
+        <label for="area">Area:</label>
+        <input type="text" name="area" id="area" list="areas">
+        <datalist id="areas">
+            <option value="Akkayyapalem"></option>
+            <option value="Asilmetta"></option>
+            <option value="Daspalla Hills"></option>
+            <option value="Dwaraka Nagar"></option>
+            <option value="Gajuwaka"></option>
+            <option value="Isukathota"></option>
+            <option value="Madhurawada"></option>
+            <option value="MVP Colony"></option>
+            <option value="Pendurthi"></option>
+            <option value="Rushikonda"></option>
+            <option value="Seethammadhara"></option>
+            <option value="Siripuram"></option>
+            <option value="Waltair"></option>
+            <option value="Duvvada"></option>
+        </datalist><br>
+
+        <button onclick="getLocation()">Get My Location</button>
+        <p id="demo"></p>
+        
+        <label for="problem_statement">Witness Statement:</label>
+        <textarea name="problem_statement" id="problem_statement"></textarea><br>
+        
+        <label for="video">Upload Video:</label>
+        <input type="file" name="video" id="video"><br>
+        
+        <label for="audio">Upload Audio:</label>
+        <input type="file" name="audio" id="audio"><br>
+        
+        <label for="pictures">Upload Pictures:</label>
+        <input type="file" name="pictures" id="pictures" multiple><br>
+        
+        
+        <div><input type="submit" value="Submit to nearest PS" ></div>
+    </form>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            // Use Nominatim's reverse geocoding to fetch detailed location information
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                .then(response => response.json())
+                .then(data => {
+                    var locationDetails = data.display_name;
+                    document.getElementById("demo").innerHTML = locationDetails;
+                })
+                .catch(error => {
+                    console.error("Error fetching location information:", error);
+                    document.getElementById("demo").innerHTML = "An error occurred while fetching location information.";
+                });
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("demo").innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("demo").innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("demo").innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("demo").innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

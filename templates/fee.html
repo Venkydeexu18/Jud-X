@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="../static/glob.css" />
+    <link rel="stylesheet" href="../static/indi.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+    />
+    <style>
+      .desktop-2 {
+        position: relative;
+        background-color: var(--color-white);
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        font-size: var(--font-size-mid);
+        color: var(--color-black);
+        font-family: var(--font-montserrat);
+        margin-top: -130px;
+      }
+
+      .frame-item {
+        position: relative;
+        width: 100%;
+      }
+
+      #case-type {
+        width: 185px;
+        padding: 10px;
+        margin-top: -8px;
+        border-radius: 4px; 
+      }
+      #state {
+        width: 185px;
+        padding: 10px; 
+        margin-top: 6px;
+        border-radius: 4px; 
+      }
+
+      .state-wrapper {
+        margin: 0;
+        align-self: stretch;
+        flex-direction: row;
+        align-items: center;
+        font-size: inherit;
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" action="/fee">
+      <div class="desktop-2">
+        <h1 class="calculate-court-fee-wrapper">
+          <div class="calculate-court-fee"># Calculate Court Fee</div>
+        </h1>
+        <div class="desktop-2-inner">
+          <img class="frame-child" alt="" src="./static/rectangle-8.svg" />
+        </div>
+        <div class="frame-parent">
+          <div class="frame-item">
+            <h1 class="case-type">CASE TYPE*</h1>
+            <br />
+            <select id="case-type" name="case-type">
+              <option value="" disabled selected>-- SELECT -- </option>
+              <option value="civil">Civil</option>
+              <option value="criminal">Criminal</option>
+              <option value="family">Family</option>
+              <option value="property">Property</option>
+              <option value="probate">Probate</option>
+              <option value="tax">Tax</option>
+              <option value="labor">Labor</option>
+              <option value="contract">Contract</option>
+            </select>
+          </div>
+        </div>
+      <div class="frame-group">
+        <h1 class="state-wrapper">
+          <h1 class="case-type">STATE*</h1>
+        </h1>
+        <div class="frame-item">
+          <select id="state" name="state">
+            <option value="" disabled selected>-- SELECT -- </option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+        </div>
+      </div>
+      <div class="frame-container">
+        <div class="claim-amount-parent">
+          <h1 class="case-type">CLAIM AMOUNT*</h1>
+        </div>
+        <input class="rectangle-input" name="claim_amount" type="text" />
+      </div>
+      <button class="calculate-wrapper" autofocus>
+        <b class="calculate">CALCULATE</b>
+      </button>
+      <h1 class="court-fee-wrapper" id="court-fee-result"></h1>
+    </div>
+
+    <script>
+        function calculateCourtFee() {
+            const caseType = document.getElementById('case-type').value;
+            const claimAmount = parseFloat(document.getElementById('claim-amount').value);
+
+            // Your court fee calculation logic here
+            const fee = calculateCourtFeeFunction(caseType, claimAmount);
+
+            if (fee === "Invalid case type") {
+                document.getElementById('court-fee-result').textContent = "Invalid case type. Please enter a valid case type.";
+            } else {
+                document.getElementById('court-fee-result').textContent = "COURT FEE: " + fee;
+            }
+        }
+
+        // Define your court fee calculation function here
+        function calculateCourtFeeFunction(caseType, claimAmount) {
+            // Your court fee calculation logic here
+            // Example:
+            const fee_multipliers = {
+                'civil': 0.02,
+                'criminal': 100,
+                'family': 0.015,
+                'property': 0.03,
+                'probate': 0.01,
+                'tax': 0.04,
+                'labor': 0.02,
+                'contract': 0.025,
+            };
+            if (caseType in fee_multipliers) {
+                return fee_multipliers[caseType] * claimAmount;
+            } else {
+                return "Invalid case type";
+            }
+        }
+    </script>
+  </form>
+  </body>
+</html>

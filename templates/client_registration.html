@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Registration</title>
+    <style>
+        body {
+            background-color: #E3DFD7;
+            font-family: "Montaga", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 7px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #777;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            padding: 15px 50px;
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333; 
+        }
+
+        @media screen and (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            textarea {
+                padding: 8px;
+            }
+
+            textarea {
+                height: 250px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Client Registration</h1>
+    <form method="post" action="/client_register">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone" required><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+        <label for="problem_statement">Problem Statement (Optional):</label>
+        <textarea name="problem_statement" id="problem_statement"></textarea><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

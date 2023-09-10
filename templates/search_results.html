@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        body {
+            background-color: #E3DFD7;
+            font-family: "Montaga", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for lawyer in lawyers %}
+            <li><a href="/lawyer/{{ lawyer.id }}">{{ lawyer.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

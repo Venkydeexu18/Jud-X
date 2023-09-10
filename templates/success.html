@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Request Sent</title>
+    <style>
+        body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 0 -20px;
+}
+
+p {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="glass-effect">
+                <p>Your consultation request has been sent.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(function() {
+            // Redirect to the home page after 3 seconds
+            window.location.href = "/";
+        }, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+</body>
+</html>

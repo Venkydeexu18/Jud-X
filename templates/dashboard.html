@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jud-X | Rights</title>
+  <link rel="stylesheet" href="../static/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <style>
+        @font-face {
+            font-family: 'Offbits';
+            src: url('../static/offbittrial-101-webfont.woff2') format('woff2'),
+                 url('../static/offbittrial-101-webfont.woff') format('woff');
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Offbit';
+            src: url('../static/offbittrial-dot-webfont.woff2') format('woff2'),
+                 url('../static/offbittrial-dot-webfont.woff') format('woff');
+            font-style: normal;
+        }
+
+        #greeting {
+          margin-top: 15px;
+          padding-top: 20px;
+          letter-spacing: 5px;
+          font-size: 40px;
+            font-family: 'Offbit', sans-serif;
+            animation: fontAnimation 1s infinite alternate;
+        }
+
+        @keyframes fontAnimation {
+            0%, 100% {
+                font-family: 'Offbit', sans-serif;
+            }
+            50% {
+                font-family: 'Offbits', sans-serif;
+            }
+        }
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .image {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .bx-search {
+      font-weight: bold;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-header img {
+      display: none;
+    }
+
+    .sidebar.expand .nav-header img {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+    }
+    .header-icon {
+      filter: invert(0%); 
+    }
+    .header-icon {
+      filter: invert(0%); 
+    }
+    .image-container {
+        width: 1340px; 
+        overflow-x: auto; 
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        margin: 0 auto;
+    }
+
+    .image-container img {
+        width: 1350px; 
+        height: auto; 
+    }
+
+</style>
+</head>
+<body>
+  <form action="/"></form>
+  <section class="sidebar">
+    <div class="nav-header">
+      <p class="logo">&nbsp&nbspJud-X</p>
+      <i class="bx bx-menu-alt-right btn-menu"></i>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <i class="bx bx-search search-btn" onclick="toggleSearch()"></i>
+        <input type="text" placeholder="Search..." class="search-input" />
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="/kids" onclick="changeImage('freedomImage', '../static/freedom.jpg')">
+          <i class='bx bxs-flag'></i>
+          <span class="title">Freedom Rights</span>
+        </a>
+        <span class="tooltip">Freedom Rights</span>
+      </li>
+      <li>
+        <a href="/kids" onclick="changeImage('educationImage', '../static/educ.jpg')">
+          <i class='bx bxs-book bx-flip-horizontal'></i>
+          <span class="title">Education Rights</span>
+        </a>
+        <span class="tooltip">Education Rights</span>
+      </li>
+      <li>
+        <a href="/kids" onclick="changeImage('educationImage', '../static/r3.jpg')">
+          <i class="fas fa-balance-scale"></i>
+          <span class="title">Equality Rights</span>
+        </a>
+        <span class="tooltip">Equality Rights</span>
+      </li>
+      <li>
+        <a href="/kids" onclick="changeImage('educationImage', '../static/r4.jpg')">
+          <i class="fas fa-gavel"></i>
+          <span class="title">Anti-Exploitation</span>
+        </a>
+        <span class="tooltip">Anti-Exploitation</span>
+      </li>
+      <li>
+        <a href="/kids" onclick="changeImage('educationImage', '../static/r5.jpg')">
+          <i class='bx bxs-briefcase'></i>
+          <span class="title">Remedies</span>
+        </a>
+        <span class="tooltip">Remedies</span>
+      </li>
+    </ul>
+    <div class="theme-wrapper">
+      <i class="bx bxs-moon theme-icon" id="ico"></i>
+      <p id="theme-text">Dark Theme</p>
+
+      <div class="theme-btn" id="ball-cont">
+        <span class="theme-ball" id="ball"></span>
+      </div>
+    </div>
+  </section>
+  <section class="home">
+    <p style="text-align: right;" id="greeting"></p>
+    <div onclick="handleButtonClick()"
+      style="position: absolute; top: 25px; right: 20px; font-weight: bold; color: var(--sec-col); font-weight: 600; cursor: pointer;"
+      id="registerBtn"></div>
+      <div class="image-container">
+        <img src="../static/r1.jpg">
+    </div>
+    
+  </section>
+
+  <script>
+    function changeImage(containerId, imagePath) {
+      const imageContainer = document.getElementById(containerId);
+      if (imageContainer) {
+        const image = imageContainer.querySelector("img");
+        if (image) {
+          image.src = imagePath;
+        }
+      }
+    }
+    const greetingElement = document.getElementById('greeting');
+
+    const name = "{{name}}";
+    const registerBtn = document.getElementById("registerBtn");
+    if (name !== "") {
+      registerBtn.textContent = "";
+    } else {
+      registerBtn.textContent = name !== "" ? name : "";
+    }
+    greetingElement.textContent = `Exploring Children's Rights Through Comics`;
+ 
+    const ball = document.getElementById("ball");
+    let r = document.querySelector(":root");
+    let rcs = getComputedStyle(r);
+    console.log(rcs);
+    const ballCont = document.getElementById("ball-cont");
+    window.localStorage.setItem("theme", "dark");
+
+    ballCont.addEventListener("click", () => {
+      ball.classList.toggle("move");
+      const state = window.localStorage.getItem("theme");
+
+      if (state === "null" || state === "dark") {
+        r.style.setProperty("--main-col", "#000");
+        r.style.setProperty("--sec-col", "#fff");
+        r.style.setProperty("--th-col", "#1a1a1a");
+        window.localStorage.setItem("theme", "light");
+        document.getElementById("ico").classList.remove("bxs-moon");
+        document.getElementById("ico").classList.add("bxs-sun");
+        document.getElementById("heart").style.filter = "invert(100%)";
+      } else {
+        r.style.setProperty("--main-col", "#fff");
+        r.style.setProperty("--sec-col", "#000");
+        r.style.setProperty("--th-col", "#e2e2e2");
+        window.localStorage.setItem("theme", "dark");
+        document.getElementById("ico").classList.remove("bxs-sun");
+        document.getElementById("ico").classList.add("bxs-moon");
+        document.getElementById("heart").style.filter = "invert(0%)";
+      }
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+
+    const btn_menu = document.querySelector(".btn-menu");
+    const side_bar = document.querySelector(".sidebar");
+
+    btn_menu.addEventListener("click", function () {
+      side_bar.classList.toggle("expand");
+      changebtn();
+    });
+
+    function changebtn() {
+      if (side_bar.classList.contains("expand")) {
+        btn_menu.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else {
+        btn_menu.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+    }
+
+    const searchBtn = document.querySelector(".search-btn");
+    const searchInput = document.querySelector(".search-input");
+    const navLinks = document.querySelectorAll(".nav-links li a");
+
+    searchBtn.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+
+      if (searchInput.classList.contains("active")) {
+        searchInput.focus();
+      } else {
+        searchInput.value = "";
+        filterNavLinks("");
+      }
+    });
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      filterNavLinks(searchTerm);
+    });
+
+    function filterNavLinks(searchTerm) {
+      navLinks.forEach((link) => {
+        const title = link.querySelector(".title").textContent.toLowerCase();
+        const tooltip = link.nextElementSibling.textContent.toLowerCase();
+
+        if (title.includes(searchTerm) || tooltip.includes(searchTerm)) {
+          link.parentElement.style.display = "block";
+        } else {
+          link.parentElement.style.display = "none";
+        }
+      });
+    }
+const sidebar = document.querySelector('.sidebar');
+
+searchBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('expand');
+  searchBtn.classList.toggle('active');
+});
+
+  btn_menu.addEventListener("click", function () {
+    side_bar.classList.toggle("expand");
+    changebtn();
+  });
+
+  function changebtn() {
+    if (side_bar.classList.contains("expand")) {
+      btn_menu.classList.replace("bx-menu", "bx-menu-alt-right");
+    } else {
+      btn_menu.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  }
+
+  const hamburgerMenu = document.querySelector('.btn-menu');
+
+  hamburgerMenu.addEventListener('click', function () {
+    side_bar.classList.toggle('expand');
+    toggleActiveClass();
+  });
+
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      side_bar.classList.remove('expand');
+      toggleActiveClass();
+    });
+  });
+
+  function toggleActiveClass() {
+    hamburgerMenu.classList.toggle('active');
+  }
+  const homeSection = document.querySelector('.home');
+
+  homeSection.addEventListener('click', () => {
+    if (sidebar.classList.contains('expand')) {
+      sidebar.classList.remove('expand');
+      toggleActiveClass();
+    }
+  });
+  const themeTextElement = document.getElementById("theme-text");
+
+ballCont.addEventListener("click", () => {
+  ball.classList.toggle("move");
+  const state = window.localStorage.getItem("theme");
+
+  if (state === "null" || state === "dark") {
+    themeTextElement.textContent = "Dark Theme";
+  } else {
+    themeTextElement.textContent = "Light Theme";
+  }
+});
+ballCont.addEventListener("click", () => {
+  ball.classList.toggle("move");
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rights TOON for Kids!</title>
+    <style>
+        body {
+            font-family: 'Montago';
+            background-color: #E3DFD7;
+            text-align: center;
+            padding: 20px 75px ;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            font-size: 45px;
+            font-family: "montago";
+        }
+
+        .btn {
+            background-color: #F5F5F5;
+            color: #333;
+            border: none;
+            border-radius: 26px;
+            padding: 20px 30px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Montago';
+            font-size: 20px;
+        }
+        .btn:hover {
+            background-color: #505f67;
+            color: white; 
+        }
+
+        .img-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #img-display {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 950px;
+            filter: grayscale(100%);
+        }
+        h2 {
+            font-size: 50px;
+            color: #020202;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Rights TOON for Kids!</h1>
+    <p>Click on a right to learn more:</p>
+
+    <button class="btn" onclick="showImg('r1')">Right against Exploitation</button>
+    <button class="btn" onclick="showImg('r2')">Right to Freedom</button>
+    <button class="btn" onclick="showImg('r3')">Right to Equality</button>
+    <button class="btn" onclick="showImg('r4')">Right to Education</button>
+    <button class="btn" onclick="showImg('r5')">Religious Freedom</button>
+    <button class="btn" onclick="showImg('r6')">Right to Property</button>
+    <button class="btn" onclick="showImg('r7')">Right to Constitution</button>
+
+    <div class="img-container" id="img-container">
+        <img src="" alt="Image" id="img-display">
+    </div>
+
+    <script>
+        function showImg(selectedRight) {
+            var imgContainer = document.getElementById("img-container");
+            imgContainer.style.display = "none";
+
+            var imgDisplay = document.getElementById("img-display");
+            switch (selectedRight) {
+                case "r1":
+                    imgDisplay.src = "../static/r1.jpg";
+                    break;
+                case "r2":
+                    imgDisplay.src = "../static/r2.jpg";
+                    break;
+                case "r3":
+                    imgDisplay.src = "../static/r3.jpg";
+                    break;
+                case "r4":
+                    imgDisplay.src = "../static/r4.jpg";
+                    break;
+                case "r5":
+                    imgDisplay.src = "../static/r5.jpg";
+                    break;
+                case "r6":
+                    imgDisplay.src = "../static/r6.jpg";
+                    break;
+                default:
+                    imgDisplay.src = "../static/r7.jpg";
+            }
+
+            imgContainer.style.display = "block";
+        }
+    </script>
+</body>
+</html>

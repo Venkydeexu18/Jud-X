@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lawyer Details</title>
+    <style>
+        body {
+            background-color: #E3DFD7;
+            font-family: "Montaga", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            font-size: xxx-large;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #0066cc;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px auto;
+            
+            max-width: 600px;
+            border-radius: 7px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+       
+        @media screen and (max-width: 768px) {
+            form {
+                padding: 10px;
+            }
+
+            input[type="text"],
+            textarea {
+                width: 100%;
+                padding: 8px;
+            }
+
+            textarea {
+                height: 250px;
+            }
+        }
+        input[type="submit"] {
+            background-color: #777;
+            /* color: #fff; */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 50px;
+            margin-left: 220px;
+            font-size: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333; 
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Lawyer Details</h1>
+    <h2>{{ lawyer.name }}</h2>
+    <p>{{ lawyer.tagline }}</p>
+    <p>Practice Area: {{ lawyer.licensed_practice_area }}</p>
+    <p>Address: {{ lawyer.address }}</p>
+
+    <form method="post" action="/consult/{{ lawyer.id }}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone"><br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"><br>
+        <label for="problem_statement">Problem Statement:</label>
+        <textarea name="problem_statement" id="problem_statement"></textarea><br>
+        <div class="s"><input type="submit" value="Consult"></div>
+    </form>
+</body>
+</html>
